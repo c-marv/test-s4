@@ -24,8 +24,8 @@ public class ClassController {
         List<ClassEntity> classEntities = DataBaseMockup.getInstance().getClasses().stream()
                 .filter(classEntity ->
                         classEntity.getCode().equals(query) ||
-                        classEntity.getTitle().startsWith(query) ||
-                        classEntity.getDescription().startsWith(query))
+                        classEntity.getTitle().toLowerCase().startsWith(query.toLowerCase()) ||
+                        classEntity.getDescription().toLowerCase().startsWith(query.toLowerCase()))
                 .collect(Collectors.toList());
         return ResponseEntity.ok(classEntities);
     }

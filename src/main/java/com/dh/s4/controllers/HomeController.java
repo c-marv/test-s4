@@ -1,14 +1,23 @@
 package com.dh.s4.controllers;
 
+import com.dh.s4.Utils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 public class HomeController {
+
     @RequestMapping("/")
     public String home(ModelMap model) {
-        model.addAttribute("message", "Message");
+        model.addAttribute("title", "Digital Harbor - S4");
+        List<String> cssFiles = Utils.getFileNamesFromPath("/src/main/resources/static/static/css", ".css");
+        List<String> jsFiles = Utils.getFileNamesFromPath("/src/main/resources/static/static/js", ".js");
+
+        model.addAttribute("cssFiles", cssFiles);
+        model.addAttribute("jsFiles", jsFiles);
         return "home";
     }
 }

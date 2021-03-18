@@ -25,8 +25,8 @@ public class StudentController {
         }
         List<StudentEntity> studentEntities = DataBaseMockup.getInstance().getStudents().stream()
                 .filter(studentEntity ->
-                        studentEntity.getFirstName().toLowerCase().startsWith(query) ||
-                        studentEntity.getLastName().toLowerCase().startsWith(query))
+                        studentEntity.getFirstName().toLowerCase().startsWith(query.toLowerCase()) ||
+                        studentEntity.getLastName().toLowerCase().startsWith(query.toLowerCase()))
                 .collect(Collectors.toList());
         return ResponseEntity.ok(studentEntities);
     }
