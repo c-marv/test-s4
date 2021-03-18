@@ -1,14 +1,14 @@
 package com.dh.s4.controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RestController
 public class HomeController {
-    @GetMapping("")
-    public String root() {
-        return "root";
+    @RequestMapping("/")
+    public String home(ModelMap model) {
+        model.addAttribute("message", "Message");
+        return "home";
     }
 }
