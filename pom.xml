@@ -14,7 +14,7 @@
     <name>test-s4</name>
     <description>Super Simple Scheduling System</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>8</java.version>
     </properties>
     <dependencies>
         <dependency>
