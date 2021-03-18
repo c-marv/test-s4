@@ -1,5 +1,7 @@
 ## Super Simple Scheduling System
 
+Live version running on https://test-s4.herokuapp.com
+
 ### Requirements
 - Apache Maven `3.6.3`
 - JDK `1.8`
@@ -29,4 +31,4 @@ $ mvn spring-boot:run
 ```shell
 $ mvn compile war:war
 ```
-The `.war` file generated is: `./target/test-s4-0.1.1-SNAPSHOT.war`
+The `.war` file generated is: `./target/test-s4-0.0.1-SNAPSHOT.war`
